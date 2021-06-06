@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="1000.0" prefWidth="800.0" stylesheets="@Emo.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chaossweeper.Controller">
+    <children>
+        <VBox alignment="TOP_CENTER" centerShape="false" prefHeight="1000.0" prefWidth="800.0" spacing="60.0">
+            <children>
+                <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="114.0" prefWidth="785.0" text="CHAOS SWEEPER">
+                    <font>
+                        <Font name="Corbel Light" size="78.0" />
+                    </font>
+                </Label>
+                <Button fx:id="playButton" alignment="CENTER" contentDisplay="TOP" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToDifficulty" prefHeight="60.0" prefWidth="170.0" styleClass="menu-button" text="Play" textFill="WHITE">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="customButton" alignment="CENTER" contentDisplay="TOP" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToCustom" prefHeight="60.0" prefWidth="170.0" styleClass="menu-button" text="Custom" textFill="WHITE">
+                    <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                    </cursor>
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Button>
+                <Button fx:id="exitButton" alignment="CENTER" contentDisplay="TOP" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#exit" prefHeight="60.0" prefWidth="170.0" styleClass="menu-button" text="Exit" textFill="WHITE">
+                    <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                    </cursor>
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Button>
+                <PieChart fx:id="pieChart" title="\% Chaos in this Game" />
+            </children>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <padding>
+                <Insets bottom="80.0" top="20.0" />
+            </padding>
+        </VBox>
+    </children>
+</HBox>

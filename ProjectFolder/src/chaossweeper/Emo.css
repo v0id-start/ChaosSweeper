@@ -1,0 +1,98 @@
+/*
+#212121 - light black for bg
+#121212 - dark black for features?
+#bb85fd - violet for buttons, black text
+#2e2e2e - grey for input text box with violet prompt text and white words
+#0ecdbb - cyan for ...things...
+*/
+
+.root{
+
+    -fx-background-color: #212121;
+    -fx-font-size: 14pt;
+}
+
+.menu-button
+{
+    -fx-background-color: #121212;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 20pt;
+}
+
+.menu-button:hover
+{
+    -fx-background-color: #2e2e2e;
+}
+
+.menu-button:pressed
+{
+    -fx-background-color: #1a1a1a;
+}
+
+.label
+{
+    -fx-text-fill: #f7f7f7;
+}
+
+.choice-box .context-menu
+{
+    -fx-background-color: black;
+}
+
+.choice-box {
+  -fx-background-color: black;
+  -fx-mark-color: #bb85fd; /*arrow color*/
+}
+.choice-box .menu-item > .label { -fx-text-fill: white; }
+.choice-box .menu-item:focused { -fx-background-color: #bb85fd; }
+
+.text-area
+{
+    -fx-text-fill: white;
+}
+
+
+.text-field
+{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+
+.text-area .content {
+    -fx-background-color: black;
+}
+
+.chart-pie
+{
+    -fx-background-color: #bb85fd;
+}
+
+.chart-pie-label {
+    -fx-fill: #f7f7f7;
+    -fx-font-size: 1em;
+}
+
+.letter-cell
+{
+    -fx-background-color: black;
+    -fx-text-fill: #f7f7f7;
+    -fx-border-color:white;
+    -fx-border-width: 0.5 0.5 0.5 0.5;
+    -fx-font-size: 18px;
+}
+
+.legend-label
+{
+    -fx-font-size: 20pt;
+}
+
+
+.letter-cell:hover
+{
+    -fx-background-color: #2e2e2e;
+}
+
+.chart-legend {
+   -fx-background-color: #2e2e2e;
+   -fx-stroke: #f7f7f7;
+}
