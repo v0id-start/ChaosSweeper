@@ -18,16 +18,20 @@ public class MineSweeperBoard {
 
     private GridPane gridPane;
 
-    public MineSweeperBoard(int rows, int cols, int mines, GridPane grid)
+    private int liveMineChance;
+
+    public MineSweeperBoard(int rows, int cols, int mines, GridPane grid, int lvMineChance)
     {
         this.numRows = rows;
         this.numCols = cols;
         this.numMines = mines;
 
+        this.liveMineChance = lvMineChance;
+
         this.board = createCellBoard(rows, cols, mines);
 
         gridPane = grid;
-        this.populateGridPane(45, 45);
+        this.populateGridPane(50, 50);
     }
 
     public int getRows() { return  this.numRows; }
@@ -119,11 +123,22 @@ public class MineSweeperBoard {
                 cellButton.setOnMouseClicked(mouseEvent -> {
                     MouseButton button = mouseEvent.getButton();
                     if (button == MouseButton.PRIMARY)
+                    {
                         currentCell.clickCell();
+
+                        if (currentCell.getValue() != -1)
+                            LiveMineBox.findMine(this.liveMineChance);
+                    }
                     else if (button == MouseButton.SECONDARY)
+                    {
                         currentCell.flagCell();
+                    }
                     else if (button == MouseButton.MIDDLE)
+                    {
                         currentCell.middleClickCell();
+                        LiveMineBox.findMine(this.liveMineChance);
+
+                    }
                 });
 
 
@@ -151,6 +166,16 @@ public class MineSweeperBoard {
         return this.board;
     }
 
+    /*
+    public void showBoard()
+    {
+        for (Cell[] cellArr : this.getBoard())
+        {
+            for (Cell c : cellArr)
+                c.clickCell();
+        }
+    }
+    */
     public String toString()
     {
         String s = "";

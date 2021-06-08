@@ -30,6 +30,8 @@ public class DifficultyController {
     public void setDifficultyHard() { play(3); }
 
     public void play(int difficulty) {
+        GameManager.resetGame();
+
         Stage window = (Stage) easyButton.getScene().getWindow();
 
         GameSettings.difficulty = difficulty;

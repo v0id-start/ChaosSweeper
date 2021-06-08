@@ -78,7 +78,7 @@
     -fx-text-fill: #f7f7f7;
     -fx-border-color:white;
     -fx-border-width: 0.5 0.5 0.5 0.5;
-    -fx-font-size: 18px;
+    -fx-font-size: 24px;
 }
 
 .legend-label
@@ -95,4 +95,9 @@
 .chart-legend {
    -fx-background-color: #2e2e2e;
    -fx-stroke: #f7f7f7;
+}
+
+.win-text
+{
+    -fx-text-fill: #00f508;
 }

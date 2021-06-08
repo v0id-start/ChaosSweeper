@@ -18,54 +18,44 @@
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="1000.0" prefWidth="800.0" stylesheets="@Emo.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chaossweeper.GameController">
-    <bottom>
-        <HBox alignment="CENTER" prefHeight="91.0" prefWidth="760.0" spacing="10.0" BorderPane.alignment="CENTER">
-            <children>
-                <Button fx:id="menuButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToMenu" prefHeight="49.0" prefWidth="101.0" styleClass="menu-button" text="Menu" />
-            </children>
-            <BorderPane.margin>
-                <Insets />
-            </BorderPane.margin>
-            <padding>
-                <Insets bottom="10.0" />
-            </padding>
-        </HBox>
-    </bottom>
-    <center>
-        <GridPane fx:id="gridPane" alignment="CENTER" gridLinesVisible="true" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
-
-        </GridPane>
-    </center>
     <top>
-        <VBox alignment="CENTER" prefHeight="170.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+        <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1018.0" prefWidth="978.0" BorderPane.alignment="CENTER">
             <children>
-                <Label alignment="CENTER" prefHeight="93.0" prefWidth="741.0" text="CHAOS SWEEPER">
+                <Label alignment="CENTER" prefHeight="216.0" prefWidth="685.0" text="CHAOS SWEEPER">
                     <font>
                         <Font name="Corbel Light" size="63.0" />
                     </font>
                 </Label>
-            <GridPane prefHeight="82.0" prefWidth="1200.0">
+            <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="119.0" prefWidth="580.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label fx:id="minesLeftLabel" prefHeight="84.0" prefWidth="612.0" text="99">
+                  <Label fx:id="minesLeftLabel" minHeight="-Infinity" minWidth="-Infinity" prefHeight="121.0" prefWidth="593.0" text="99" GridPane.hgrow="SOMETIMES">
                      <font>
                         <Font name="Corbel Light" size="67.0" />
                      </font>
                   </Label>
+                  <Pane fx:id="timeLeftPane" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" />
                </children>
             </GridPane>
+            <Label fx:id="winLabel" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="127.0" prefWidth="566.0" styleClass="win-text" text="Clean Sweep">
+               <font>
+                  <Font name="Corbel Light Italic" size="67.0" />
+               </font>
+            </Label>
+            <GridPane fx:id="gridPane" alignment="TOP_CENTER" gridLinesVisible="true" minHeight="-Infinity" minWidth="-Infinity" prefHeight="716.0" prefWidth="965.0" />
             </children>
             <BorderPane.margin>
                 <Insets />
             </BorderPane.margin>
          <padding>
-            <Insets left="50.0" />
+            <Insets left="50.0" top="50.0" />
          </padding>
         </VBox>
     </top>
@@ -78,4 +68,14 @@
     <padding>
         <Insets left="20.0" right="20.0" />
     </padding>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="91.0" prefWidth="760.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="menuButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#goToMenu" prefHeight="49.0" prefWidth="101.0" styleClass="menu-button" text="Menu" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+      </HBox>
+   </bottom>
 </BorderPane>

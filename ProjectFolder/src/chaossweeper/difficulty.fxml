@@ -22,7 +22,7 @@
                         <Font name="Corbel Light" size="78.0" />
                     </font>
                 </Label>
-                <Button fx:id="easyButton" alignment="CENTER" contentDisplay="TOP" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setDifficultyEasy" prefHeight="60.0" prefWidth="170.0" styleClass="menu-button" text="Easy" textFill="WHITE">
+                <Button fx:id="easyButton" alignment="CENTER" contentDisplay="TOP" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setDifficultyEasy" prefHeight="60.0" prefWidth="170.0" styleClass="menu-button" text="Beginner" textFill="WHITE">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -30,7 +30,7 @@
                         <Cursor fx:constant="OPEN_HAND" />
                     </cursor>
                 </Button>
-                <Button fx:id="normalButton" alignment="CENTER" contentDisplay="TOP" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setDifficultyNormal" prefHeight="60.0" prefWidth="170.0" styleClass="menu-button" text="Normal" textFill="WHITE">
+                <Button fx:id="normalButton" alignment="CENTER" contentDisplay="TOP" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setDifficultyNormal" prefHeight="60.0" prefWidth="170.0" styleClass="menu-button" text="Intermediate" textFill="WHITE">
                     <cursor>
                         <Cursor fx:constant="OPEN_HAND" />
                     </cursor>
@@ -38,7 +38,7 @@
                         <Font size="24.0" />
                     </font>
                 </Button>
-                <Button fx:id="hardButton" alignment="CENTER" contentDisplay="TOP" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setDifficultyHard" prefHeight="60.0" prefWidth="170.0" styleClass="menu-button" text="Hard" textFill="WHITE">
+                <Button fx:id="hardButton" alignment="CENTER" contentDisplay="TOP" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setDifficultyHard" prefHeight="60.0" prefWidth="170.0" styleClass="menu-button" text="Expert" textFill="WHITE">
                     <cursor>
                         <Cursor fx:constant="OPEN_HAND" />
                     </cursor>

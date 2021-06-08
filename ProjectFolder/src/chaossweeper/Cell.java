@@ -47,16 +47,18 @@ public class Cell {
     }
     public boolean getFlagged() { return this.flagged; }
 
+    public boolean getClicked() { return this.clicked; }
     public void clickCell()
     {
-        if (!this.flagged)
+
+        if (!this.flagged && !this.clicked)
         {
+
             this.clicked = true;
             this.getButton().setStyle("-fx-background-color: #4a4a4a;");
 
             if (this.value == 0)
             {
-                GameManager.addSafeCell();
                 this.getButton().setText("");
                 this.getButton().setStyle("-fx-background-color: #404040;");
             }
@@ -70,12 +72,15 @@ public class Cell {
                 mineView.setPreserveRatio(true);
                 this.getButton().setGraphic(mineView);
 
-                GameManager.loseGame();
+                if (!GameManager.gameLost)
+                {
+                    GameManager.gameLost = true;
+                    GameManager.loseGame();
+                }
 
             }
             else
             {
-                GameManager.addSafeCell();
                 this.getButton().setText(String.valueOf(this.getValue()));
                 switch (this.value)
                 {
@@ -128,9 +133,13 @@ public class Cell {
 
             if (this.getValue() == 0)
                 clickUntilEdge();
+
+            GameManager.checkIfWon();
+
         }
 
     }
+
 
     public void middleClickCell()
     {
@@ -199,8 +208,10 @@ public class Cell {
             int adjacentValue = adjacentCell.getValue();
 
             if (adjacentValue == 0 && !adjacentCell.clicked)
+            {
                 adjacentCell.clickCell();
-            else if (adjacentValue != 0 && !edgeReached)
+            }
+            else if (adjacentValue != 0 && !edgeReached && !adjacentCell.clicked)
             {
                 adjacentCell.clickCell();
                 edgeReached = true;

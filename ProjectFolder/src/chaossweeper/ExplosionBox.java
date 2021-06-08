@@ -14,72 +14,56 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.net.MalformedURLException;
+import java.net.URL;
 
 public class ExplosionBox {
 
-/*
-    public static void display()
-    {
-        Stage window = new Stage();
 
-        window.initModality(Modality.APPLICATION_MODAL);
-        window.setTitle("MINE");
-        window.setMinWidth(1000);
-        window.setMinHeight(1000);
-
-
-        Button okButton = new Button("Ok");
-        okButton.setOnAction(event -> window.close());
-
-        Media media = new Media("explosion.mp4");
-        MediaPlayer mediaPlayer = new MediaPlayer(media);
-        mediaPlayer.setAutoPlay(true);
-        MediaView mediaView = new MediaView (mediaPlayer);
-
-        VBox layout = new VBox(1000);
-        layout.getChildren().addAll(mediaView, okButton);
-        layout.setAlignment(Pos.CENTER);
-
-        Scene scene = new Scene(layout);
-        window.setScene(scene);
-        window.showAndWait();
-    }
-
-
- */
-
-
-    public static void display()
-    {
-        Stage primaryStage = new Stage();
-        primaryStage.setTitle("MINE");
-
-        File mediaFile = new File("explosion.mp4");
-        Media media = null;
+    public static void display() {
         try {
-            media = new Media(mediaFile.toURI().toURL().toString());
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
+
+            // get URL of the video file
+
+            URL url = ExplosionBox.class.getResource("explosion.mp4");
+
+            // create a Media object for the specified URL
+
+            Media media = new Media(url.toExternalForm());
+
+            // create a MediaPlayer to control Media playback
+            MediaPlayer mediaPlayer = new MediaPlayer(media);
+
+            Stage primaryStage = new Stage();
+            primaryStage.setTitle("MINE");
+
+            //URL urlToExplosion = (ExplosionBox.class.getResource("explosion.mp4"));
+            //String path = urlToExplosion.getPath();
+
+            //String path = "media/explosion.mp4";
+            //Media media = new Media(new File(path).toURI().toString());
+
+            //MediaPlayer mediaPlayer = new MediaPlayer(media);
+
+            mediaPlayer.setOnEndOfMedia(new Runnable() {
+                @Override
+                public void run() {
+                    primaryStage.close();
+                }
+            });
+
+            MediaView mediaView = new MediaView(mediaPlayer);
+
+
+            Scene scene = new Scene(new Pane(mediaView), 800, 500);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+
+            mediaPlayer.play();
+
+        }    catch(Exception e)
+        {
+            System.out.println(e);
         }
-
-        MediaPlayer mediaPlayer = new MediaPlayer(media);
-
-        mediaPlayer.setOnEndOfMedia(new Runnable() {
-            @Override
-            public void run() {
-                primaryStage.close();
-            }
-        });
-
-        MediaView mediaView = new MediaView(mediaPlayer);
-
-
-        Scene scene = new Scene(new Pane(mediaView), 800, 500);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-
-        mediaPlayer.play();
     }
-
 
 }
